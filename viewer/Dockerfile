@@ -11,7 +11,7 @@ RUN set -x && \
 		git \
 		build-base \
 		openssl \
-		nodejs && \
+		nodejs-npm && \
 	echo 'gem: --no-document' >> /etc/gemrc && \
 	git clone ${REPOSITORY} ${SRCDIR} && \
 	cd ${SRCDIR} && \
