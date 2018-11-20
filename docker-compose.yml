@@ -13,6 +13,7 @@ services:
       context: ./
       dockerfile: ./viewer/Dockerfile
     container_name: slack-patron-viewer
+    restart: always
     ports:
      - "9292:9292"
     links:
@@ -20,3 +21,5 @@ services:
 
   mongo:
     image: mongo
+    container_name: slack-patron-mongo
+    restart: always
