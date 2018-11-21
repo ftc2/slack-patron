@@ -112,7 +112,7 @@ export default class extends Component {
       return <SlackMessagePrototype
           message={message}
           icon={user && user.profile.image_48}
-          username={user && user.name}
+          username={user.profile.display_name || user.real_name || user.name}
           showChannel={showChannel}
           teamInfo={teamInfo}
           text={message.text}
