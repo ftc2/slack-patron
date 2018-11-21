@@ -18,6 +18,8 @@ services:
      - "9292:9292"
     links:
      - mongo
+#    volumes:
+#     - "/Users/synth/Downloads/slack-tests/slack-patron/mnt:/usr/local/slack-patron/mnt"
 
   mongo:
     image: mongo
