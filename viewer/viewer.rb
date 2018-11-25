@@ -48,11 +48,11 @@ def messages(params)
   condition[:channel] = params[:channel] unless params[:channel].nil?
   condition['$or'] = [
     # normal message
-    { text: Regexp.new(params[:search]) },
+    { text: Regexp.new(params[:search], Regexp::IGNORECASE) },
     # bot message
     {
       attachments: {
-        '$elemMatch' => { text: Regexp.new(params[:search]) }
+        '$elemMatch' => { text: Regexp.new(params[:search], Regexp::IGNORECASE) }
       },
       subtype: 'bot_message'
     }
